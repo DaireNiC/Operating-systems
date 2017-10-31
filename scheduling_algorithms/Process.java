@@ -13,11 +13,11 @@ public class Process
     this.p_burst = p_burst;
     this.p_wait_time = p_wait_time;
   }
-  
 
-  public Process() {}
+  public Process() {
+	  //null constructor
+  }
   
-
   public int compareTo(Process arg0)
   {
     int burst_time_compare = p_burst;

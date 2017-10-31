@@ -5,7 +5,8 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Runner
-{}
+{
+  public Runner() {}
   
   public static void main(String[] args)
   {
@@ -29,8 +30,7 @@ public class Runner
     
     for (int i = 0; i < num_process; i++)
     {
-      Process p = new Process();
-      
+      Process p = new Process();  
 
       System.out.println("Enter the process name: ");
       int p_id = console.nextInt();
@@ -40,10 +40,12 @@ public class Runner
       int burst = console.nextInt();
       p.setP_burst(burst);
       
+      //add p to list of processes
       list.add(p);
     }
   }
   
+  // Method to display each of the processes
   public static void display(ArrayList<Process> list)
   {
     System.out.println(list.toString());
@@ -77,7 +79,7 @@ public class Runner
 	    System.out.println("\nPress 1 for Round Robin \nPress 2 for FCFS \nPress 3 for SJF\nPress 4 to Exit");
 	    choice = console.nextInt();
     }//while
-   // console.close();
+    console.close();
   }
   
   private static void RoundRobin(ArrayList<Process> list) {
@@ -89,6 +91,7 @@ public class Runner
 	  //get user to enter quantum
 	  System.out.println("Please enter the quantum: ");
 	  int quantum = console.nextInt();
+	  console.close();
 	  
 	  // 3 arrays
 	  int remaining [] = new int[list.size()];
@@ -103,7 +106,6 @@ public class Runner
 		 remaining[i] = p.getP_burst() ; //set remainder values = burst time
 	  }
 	   
-	  
 	  //while there are still values to processes in the remaining array
 	  while (IntStream.of(remaining).sum() > 0){
 		  //for each process in the list
