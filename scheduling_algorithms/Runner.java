@@ -5,8 +5,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Runner
-{
-  public Runner() {}
+{}
   
   public static void main(String[] args)
   {
